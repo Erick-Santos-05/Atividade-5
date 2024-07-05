@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevado</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div{
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        #n1, #n2{
+            width: 50px;
+        }
+        div>h1{
+            display: flex;
+            justify-content: center;
+        }
+        #botao{
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Calculo de Elevado</h1>
+        <input type="number" name="n1" id="n1">
+        <span>^</span>
+        <input type="number" name="n2" id="n2">
+        <span>=</span>
+        <span id="resul"></span>
+        <input type="button" value="CALCULAR" id="botao" onclick="calcular()">
+    </div>
+
+    <script>
+        function calcular()
+        {
+            var n1Cap = document.getElementById('n1');
+            var n1 = Number((n1Cap.value));
+            var n2Cap = document.getElementById('n2');
+            var n2 = Number((n2Cap.value));
+            var resul = document.getElementById('resul');
+            var resultado = n1 ** n2;
+
+            resul.innerHTML = (resultado);
+        }
+    </script>
+</body>
+</html>

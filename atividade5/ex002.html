@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div{
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        div>h1{
+            display: flex;
+            justify-content: center;
+        }
+        #botao{
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Calculo Média</h1>
+        <p>Nome:</p>
+        <input type="text" name="nome" id="nome">
+        <p>Nota 1:</p>
+        <input type="number" name="not1" id="not1">
+        <p>Nota 2:</p>
+        <input type="number" name="not2" id="not2">
+        <p>Nota 3:</p>
+        <input type="number" name="not3" id="not3">
+        <input type="button" value="CALCULAR" id="botao" onclick="enviar()">
+        <aside id="resul"></aside>
+    </div>
+
+    <script>
+        function enviar()
+        {
+            var nomeCap = document.getElementById('nome');
+            var nome = (nomeCap.value);
+            var not1Cap = document.getElementById('not1');
+            var not1 = Number((not1Cap.value));
+            var not2Cap = document.getElementById('not2');
+            var not2 = Number((not2Cap.value));
+            var not3Cap = document.getElementById('not3');
+            var not3 = Number((not3Cap.value));
+            var media = (not1+not2+not3)/3;
+            var resul = document.getElementById('resul')
+
+            media>=60?resul.innerHTML = (`${nome}, você esta aprovado.`):resul.innerHTML = (`${nome}, você esta reprovado.`);
+        }
+    </script>
+</body>
+</html>
